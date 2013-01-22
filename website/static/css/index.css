@@ -1,0 +1,225 @@
+/* Main Attention Grab */
+
+.subheader {
+	height: 160px;
+	background: #232323;
+	padding-top: 30px;
+	text-align: center;
+}
+.subheader_container {
+	width: 960px;
+	margin: 0px auto;
+}
+.intro-text {
+	padding-top: 60px;
+	height: 150px;
+	background: #555 url("../img/black-linen.png") repeat;
+	border-bottom:1px solid #3a3a3a;
+}
+.intro-text a {
+	margin-top: 15px;
+	margin-left: 0px;
+	font-weight: 700;
+	float: left;
+	box-shadow: 0 0 10px #6CC1EA;
+} 
+
+.intro-text h1 {
+	color: #F5FCFF;
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.intro-text h1 span {
+	font-weight: 700;
+	color: #6cc1ea;
+}
+
+
+/*Sub header */
+.subheader {
+	height: 160px;
+	background: #232323;
+	padding-top: 30px;
+	border-bottom:1px solid #444;
+}
+.subheader .object {
+	width: 180px;
+	height: 120px;
+	text-align: center;
+	float: left;
+}
+.subheader .object p {
+	font-size: 16px;
+	color: white;
+	line-height: 1.2;
+	font-weight: 600;
+}
+.subheader .step4 p {
+	color: #ffc528;
+}
+.subheader .step3 p {
+	color: #dea3ea;
+}
+.subheader .step2 p {
+	color: #6cc1ea;
+}
+.subheader .step1 p {
+	color: #bbf8b8;
+}
+.subheader .arrow {
+	float: left;
+	width: 40px;
+	color: #666;
+	margin-top: 50px;
+	font-size: 40px;
+	padding: 0 20px;
+}
+
+/* Animation CSS*/
+.fall-object {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	display: inline;			
+}
+.falling_container {
+	height: 150px;
+	background: #f5f5f5;
+}
+.falling {
+	height: 150px;
+	width: 600px;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0;
+}
+.off_set1 {
+	top: -150px;
+	left: 5px;
+}
+.off_set2 {	
+	top: -100px;
+	left: 10px;
+}
+.off_set3 {	
+	top: 50px;
+	left: 10px;
+}
+.off_set4 {	
+	top: 180px;
+	left: 10px;
+}
+.off_set5 {
+	top: -40px;
+	left: 10px;
+}
+.off_set6 {	
+	top: -80px;
+	left: 10px;
+}
+.off_set7 {	
+	top: -130px;
+	left: 10px;
+}
+.off_set8  {	
+	top: 20px;
+	left: 10px;
+}
+.off_set9  {	
+	top: -80px;
+	left: 10px;
+}
+.off_set10  {	
+	top: -30px;
+	left: 10px;
+}
+.off_set11  {	
+	top: 150px;
+	left: 10px;
+}
+.off_set12  {	
+	top: -120px;
+	left: 10px;
+}
+.off_set13  {	
+	top: 80px;
+	left: 10px;
+}
+.off_set14  {	
+	top: 0;
+	left: 10px;
+}
+.off_set15  {	
+	top: -60;
+	left: 10px;
+}
+
+/*Glow Boxes*/
+
+.glow_container {
+	background: #f5f5f5;
+}
+.glow {
+	text-align: center;
+	margin-top: 0px;
+}
+.glow p{
+	line-height: 10px;
+	color: #aaa;
+}
+
+/*Features*/
+.features-container {
+	background: white;
+	padding: 40px 0 80px 0;
+}
+.features {
+	width: 960px;
+	margin: 0 auto;
+	height: 400px;
+	padding-bottom: 40px;
+}
+.featurebox {
+	height: 240px;
+	width: 480px;
+	float: left;
+}
+.featurebox img  {
+	float: left;
+	width: 40px;
+}
+.featurebox .feature-text {
+	float: left;
+	width: 400px;
+	margin-left: 15px;
+	text-align: left;
+}
+.featurebox .feature-text h1{
+	color: #0096D7;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 50px;
+	font-family: Open Sans,Helvetica,Arial,sans-serif;
+}
+.featurebox .feature-text h2{
+	color: #777779;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+.feature1 .feature-text h1 {color: #0096d7;}
+.feature2 .feature-text h1 {color: #f28c39;}
+.feature3 .feature-text h1 {color: #feca30;}
+.feature4 .feature-text h1 {color: #90d8f6;}
+
+
+
+
+
+
+
+
+
+
+

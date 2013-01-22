@@ -1,0 +1,211 @@
+.data {
+	width: 450px;
+	min-height: 200px;
+	float: left;
+}
+.data h1 {
+	font-size: 38px;
+    font-weight: 300;
+    line-height: 45px;
+    text-align: left;
+    margin: 20px 0 0 20px;
+}
+.data h2 {
+	color: #777779;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+    font-weight: 300;
+    margin-left: 20px;
+}
+.samplebox {
+	width: 500px;
+	height: 500px;
+	padding-top: 10px;
+	float: left;
+}
+.sampleform {
+	width: 430px;
+	margin-left: 20px;
+	text-align: left;
+}
+.sampleform #profession {
+	float: left;
+	margin-right: 10px;
+}
+.sampleform #inputFirstName {
+	width: 100px;
+	margin-left: 5px;
+	float: left;
+	clear: none;
+}
+.sampleform #inputLastName {
+	float: left;
+	clear: none;
+	margin-left: 5px;
+	width: 120px;
+}
+.sampleform #inputPrefix {
+	width: 60px;
+	clear: left;
+	float: left;
+	height: 40px;
+}
+.sampleform #inputSuffix {
+	width: 85px;
+	margin-left: 5px;
+	clear: none;
+	float: left;
+}
+.sampleform #inputAddress {
+	margin-left: 5px;
+}
+.sampleform #inputCity {
+	clear: left;
+	float: left;
+	width: 150px;
+}
+.sampleform #inputState {
+	clear: none;
+	float: left;
+	width: 70px;
+	height: 40px;
+	margin-left: 5px;
+	padding-top: 8px;
+	padding-bottom: 5px;
+}
+.sampleform #inputZipcode {
+	clear: none;
+	float: left;
+	width: 80px;
+	margin-left: 5px;
+}
+.sampleform .contentsbox{
+	width: 200px;
+	float: left;
+}
+.sampleform button {
+	margin: 10px 0;
+}
+.sampleform p {
+	font-size: 12px;
+	color: #aaa;
+}
+.sampleform textarea {
+	display: none;
+}
+.sampleform input, .sampleform select {
+	clear: both;
+	height: 30px;
+	width: 190px;
+	margin: 8px 0;
+}
+.sampleform select {
+	color: #888;
+}
+#inputState, #inputZipCode {
+	width: 98px;
+}
+.input-append .add-on:last-child {
+	width: 30px;
+	height: 30px;
+	margin: 0 10px 10px 0px;
+	border-radius: 4px;
+	text-align: center;
+}
+.input-append.color .add-on i {
+	width: 30px;
+	height: 30px;
+}
+#inputOtherProfession {
+	display: none;
+}
+.checkbox input {
+	height: 20px;
+	width: 20px;
+	float: left;
+}
+.checkbox p {
+	float: left;
+	font-size: 14px;
+	margin: 8px 0 0 3px;
+}
+.checkbox {
+	width: 150px;
+	color: #777;
+}
+#personalmessage {
+	margin-top: 5px;
+	width: 350px;
+	display: none;
+	float: left;
+}
+
+.preview_container {
+	width: 470px;
+	background: #d2d2d2;
+	min-height: 300px;
+	margin: 10px auto 0 auto;
+	border:1px solid #ccc;
+}
+.preview_unavailable {
+	display: none;
+	width: 430px;
+	background: #333;
+	height: 400px;
+	margin: 10px auto 0 auto;
+	border:1px solid #ccc;
+	color: #eee;
+	padding: 40px 20px
+}
+.preview_unavailable h3 {
+	font-weight: 300;
+}
+.preview_unavailable h4 {
+	font-size: 16px;
+	font-weight: 300;
+	padding: 50px 20px 0 20px;
+	line-height: 25px;
+}
+.preview_header {
+	min-height: 90px;
+	width: 100%;
+	margin-bottom: -30px;
+}
+.preview_info {
+	padding: 15px 15px 0 0;
+}
+.preview_info p {
+	margin: 0;
+	text-align: right;
+	color: white;
+	line-height: 13px;
+	font-size: 11px;
+}
+.preview_section {
+	background: white;
+	border:1px solid #ccc;
+	padding: 5px;
+	min-height: 40px;
+	width: 430px;
+	margin: 10px auto;
+	font-size: 11px;
+}
+.preview_personal {
+	text-align: center;
+	padding: 10px 0;
+	line-height: 13px;
+	width: 400px;
+	margin: 0 auto;
+}
+.preview_profession {
+	color: white;
+	padding-left: 20px;
+	padding-top: 20px;
+	float: left;
+	width: 300px;
+}
+.resetcolors:hover {
+	text-decoration: underline;
+	cursor: pointer
+}

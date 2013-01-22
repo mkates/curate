@@ -1,0 +1,143 @@
+.price-table {
+	margin: 30px 50px 70px 50px;
+	text-align:center;
+}
+.price-table .element {
+	border-top: 1px solid #ddd;
+}
+
+.price-table td {
+	width: 200px;
+	text-align:center;
+	font-weight: 300;
+	color: #666;
+	height: 50px;
+	border-right:1px solid #aaa;
+}
+.price-table .category {
+	color: #666;
+	font-weight: 300;
+	border-bottom:1px solid #efefef;
+	text-align: left;
+	padding-left: 15px;
+}
+.price-table .names {
+	background: #333;
+}
+
+.price-table .names .title1 {
+	border-top: 1px solid #aaa;
+}
+.price-table .names h1 {
+	font-size: 18px;
+	font-weight: 300;
+	color: #ccc;
+	line-height: 50px;
+}
+.price-table .names h2 {
+	font-size: 34px;
+	color: #ccc;
+	font-weight: 300;
+	line-height: 34px;
+	margin: 0;
+	padding: 0;
+}
+.price-table .names a {
+	margin-bottom: 20px;
+}
+.price-table .best {
+	background: none;
+	margin: 5px;
+}
+
+/* 
+.price-table .names .starter h1 { color: #f28c39;}
+.price-table .names .pro h1 { color: #feca30;}
+.price-table .names .enterprise h1 { color: #90d8f6;}
+ */
+.price-table .names h3 {
+	color: #ccc;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 12px;
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+.blank {
+	border-bottom: 1px solid #ddd;
+	background: white;
+}
+.borderbottom {
+	border-bottom: 1px solid #aaa;
+}
+.price-table .odd {
+	background: #f9f9f9;
+}
+
+/*More questions*/
+
+.moreinfo {
+	width: 450px;
+	float: left;
+	text-align: left;
+	margin-left: 50px;
+	margin-bottom: 50px;
+}
+.moreinfo .question {
+	margin-bottom: 15px;
+}
+.moreinfo .question h3 {
+	color: #303031;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.moreinfo .question p {
+	color: #303031;
+	font-weight: 300;
+}
+
+/*Testimonials*/
+
+.testimonials {
+	width: 250px;
+	margin-right: 85px;
+	margin-top: 0px;
+	float: right;
+	text-align: right;
+}
+.testimonials .quote {
+	margin: 20px 0px 40px 0px;
+	padding-right: 15px;
+	border-right: 5px solid #ddd;
+}
+.testimonials .quote h1 {
+	color: #555;
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 1.5;
+}
+.testimonials .quote h2 {
+	color: #999;
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+/*Question Mark Hover Effect*/
+
+.tooltip {
+	font-size: 14px;
+	line-height: 20px;
+	margin: 5px;
+}
+.tooltip1:hover {
+	cursor: pointer;
+}
+.qmark {
+	margin-left: 10px;
+	opacity: .5;
+}
+.qmark:hover {
+	opacity: .8;
+}

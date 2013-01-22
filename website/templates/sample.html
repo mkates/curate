@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% block headerjs %}
+	<script src="{{STATIC_URL}}js/sample.js" type="text/javascript"></script>
+	<script src="{{STATIC_URL}}js/bootstrap-colorpicker.js" type="text/javascript"></script>
+{% endblock%}
+
+{% block headercss %}
+	<link href="{{STATIC_URL}}css/colorpicker.css" rel="stylesheet" type="text/css" />	
+	<link href="{{STATIC_URL}}css/sample.css" rel="stylesheet" type="text/css" />
+
+{% endblock%}
+
+{% block content %}
+
+<div class="main-container">
+	<div class="main-body">
+		<div class="data">
+			<h1> Send Yourself A Sample </h1>
+			<h2> Fill in the information below, and preview what your newsletter's could
+			look like. Sample newsletter will update automatically.</h2>
+			<form class="sampleform form-horizontal">
+				<select id="profession">
+					<option class="selectoptions"> Profession. . . </option>
+					<option id="dentistry"> Dentistry </option>
+					<option id="optometry"> Optometry </option>
+					<option id="general"> General Practitioner </option>
+					<option id="other"> Other </option>
+				</select>
+				<input type="text" id="inputOtherProfession" placeholder="Enter Your Industry. . .">
+				<select id="inputPrefix">
+					<option>Dr.</option>
+					<option>Mr.</option>
+					<option>Mrs.</option>
+					<option>Ms.</option>
+					<option>Prof.</option>
+				</select>
+				<input type="text" id="inputFirstName" placeholder="First Name" >
+				<input type="text" id="inputLastName" placeholder="Last Name" >
+				<input type="text" id="inputSuffix" placeholder="Suffix" >
+				<div class="clear"></div>
+				<input type="text" id="inputEmail" placeholder="Email">
+				<input type="text" id="inputAddress" placeholder="Street Address">
+				<div class="clear"></div>
+				<input type="text" id="inputCity" placeholder="City">
+				<select id="inputState" placeholder="State">
+					<option>State</option>
+					<option>AL</option>
+					<option>AK</option>
+					<option>AZ</option>
+					<option>AR</option>
+					<option>CA</option>
+					<option>CO</option>
+					<option>CT</option>
+					<option>DC</option>
+					<option>DE</option>
+					<option>FL</option>
+					<option>GA</option>
+					<option>HI</option>
+					<option>ID</option>
+					<option>IL</option>
+					<option>IN</option>
+					<option>IA</option>
+					<option>KS</option>
+					<option>KY</option>
+					<option>LA</option>
+					<option>ME</option>
+					<option>MD</option>
+					<option>MA</option>
+					<option>MI</option>
+					<option>MN</option>
+					<option>MS</option>
+					<option>MO</option>
+					<option>MT</option>
+					<option>NE</option>
+					<option>NV</option>
+					<option>NH</option>
+					<option>NJ</option>
+					<option>NM</option>
+					<option>NY</option>
+					<option>NC</option>
+					<option>ND</option>
+					<option>OH</option>
+					<option>OK</option>
+					<option>OR</option>
+					<option>PA</option>
+					<option>RI</option>
+					<option>SC</option>
+					<option>SD</option>
+					<option>TN</option>
+					<option>TX</option>
+					<option>UT</option>
+					<option>VT</option>
+					<option>VA</option>
+					<option>WA</option>
+					<option>WV</option>
+					<option>WI</option>
+					<option>WY</option>
+				</select>
+				<input type="text" id="inputZipcode" maxlength="5" placeholder="Zip Code">
+				<div class="clear"></div>	
+				<p> Select Colors: (<span class="resetcolors">reset colors</span>)</p>
+					<div class="input-append color" id="color1" data-color="rgb(35, 113, 146)" data-color-format="rgb">
+						<span class="add-on"><i style="background-color: rgb(35, 113, 146)"></i></span>
+					</div>
+					<div class="input-append color" id="color2" data-color="rgb(210, 210, 210)" data-color-format="rgb">
+						<span class="add-on"><i style="background-color: rgb(210, 210, 210)"></i></span>
+					</div>
+					<div class="input-append color" id="color3" data-color="rgb(37, 37, 37)" data-color-format="rgb">
+						<span class="add-on"><i style="background-color: rgb(37, 37, 37)"></i></span>
+					</div>
+					<div class="input-append color" id="color4" data-color="rgb(50, 122, 153)" data-color-format="rgb">
+						<span class="add-on"><i style="background-color: rgb(50, 122, 153)"></i></span>
+					</div>
+					<div class="input-append color" id="color5" data-color="rgb(50, 122, 153)" data-color-format="rgb">
+						<span class="add-on"><i style="background-color: rgb(50, 122, 153)"></i></span>
+					</div>
+				<div class="clear"></div>
+				<div class="contentsbox">
+					<label class="checkbox">
+						<input type="checkbox" id="questionscheckbox" checked="yes">
+						<p>Trending Questions</p>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox" id="productcheckbox" checked="yes">
+						<p>Popular Products</p>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox" id="personalcheckbox"> 
+						<p>Custom Message</p>
+					</label>
+				</div>
+				<div class="contentsbox">
+					<label class="checkbox">
+						<input type="checkbox" id="sociallinkscheckbox" checked="yes">
+						<p>Social Links</p>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox" id="giveawaycheckbox" checked="yes">
+						<p>Monthly Give-A-Way</p>
+					</label>
+				</div>
+				<textarea rows="3" id="personalmessage" placeholder="Enter your custom message here. . .">Here is your custom message</textarea>
+				<div class="clear"></div>
+				<button class="submit btn btn-large btn-warning"> Send me this sample! </button>
+			</form>
+		</div>
+		<div class="samplebox">
+			<div class="preview_unavailable">
+				<h3> We're sorry, but we do not currently offer support to your industry</h3>
+				<h4> Fill out the form and we will let you know when we launch with your profession!</h4>
+			</div>
+			<div class="preview_container">
+				<div class="preview_header">
+					<p class="preview_profession"></p>
+					<div class="preview_info">
+						<p class="preview_name"></p>
+						<p class="preview_address"></p>
+						<p class="preview_address2"></p>
+					</div>
+				</div>
+				<div class="preview_section" id="preview_custom">
+					<p class="preview_personal"></p>
+				</div>
+				<div class="preview_section" id="preview_questions">
+					questions
+				</div>
+				<div class="preview_section" id="preview_products">
+					products
+				</div>
+				<div class="preview_section" id="preview_giveaway">
+					give-a-way
+				</div>
+				<div class="preview_section" id="preview_sociallinks">
+					sociallinks
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>	
+</div>
+{% endblock %}

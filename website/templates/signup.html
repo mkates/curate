@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block headercss %}
+	<link href="{{STATIC_URL}}css/signup.css" rel="stylesheet" type="text/css" />
+{% endblock%}
+
+{% block headerjs %}
+
+{% endblock%}
+ 
+
+{% block content %}
+<div class="main-container">
+	<div class="main-body">
+		<div class="title">
+			<h1>Thanks for your interest!</h1>
+			<h2>Unfortunately, we are still completing our beta testing. Enter your information
+			 below to and we will contact you with beta login information. </h2>
+			<img src="{{STATIC_URL}}img/shadow-small.png" />
+		</div>	
+		<div class="form">
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label" for="inputName">Name</label>
+					<div class="controls">
+						<input type="text" id="inputName" placeholder="Name">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Email</label>
+					<div class="controls">
+						<input type="text" id="inputEmail" placeholder="Email">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPhone">Phone</label>
+					<div class="controls">
+						<input type="text" id="inputPhone" placeholder="Phone">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputIndustry">Industry</label>
+					<div class="controls">
+						<input type="text" id="inputIndustry" placeholder="Industry">
+					</div>
+				</div>
+				<button type="submit" class="btn btn-info">Join Beta List</button>
+			</form>
+		</div>
+		<img class="pros" src="{{STATIC_URL}}img/professionals.png"/>
+		<div class="clear"></div>
+	</div>
+</div>
+
+{% endblock %}

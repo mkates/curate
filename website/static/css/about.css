@@ -1,0 +1,41 @@
+.values {
+	margin: 0 auto 20px auto;
+	width: 900px;
+}
+.mission {
+	width: 800px;
+	margin: 30px auto 50px auto;
+}
+.main-body .title .values h2 {
+	text-align: left;
+	margin-left: 50px;
+	font-size: 28px;
+	color: #444;
+}
+
+.about-box {
+	width: 260px;
+	margin: 19px;
+	height: 300px;
+	float: left;
+	text-align: center;	
+}
+.about-box h3 {
+	color: #444;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 50px;
+	font-family: Open Sans,Helvetica,Arial,sans-serif;
+	margin-top: -52px;
+	text-shadow: 0 0 3px #eee;
+}
+.about-box h4 {
+	padding-top: 15px;
+	color: #777779;
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+.main-body .title .about-box-img {
+	opacity: .15;
+}

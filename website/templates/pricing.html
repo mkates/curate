@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% block headercss %}
+	<link href="{{STATIC_URL}}css/pricing.css" rel="stylesheet" type="text/css" />
+{% endblock%}
+
+{% block headerjs %}
+<script>
+	$(document).ready(function () {
+		$(".tooltip1").tooltip({
+			'trigger':'click',
+		});
+		$(".tooltip1").hover(function() {}, function() {
+			$(this).tooltip('hide');
+		});
+	});
+</script>
+{% endblock%}
+ 
+
+{% block content %}
+
+<div class="main-container">
+	<div class="main-body">
+		<div class="title">
+			<h1>Plans for Every Size Business</h1>
+			<h2>Pick the plan that matches your business needs. With no contracts, you can upgrade or downgrade as your business scales.</h2>
+			<img src="{{STATIC_URL}}img/shadow-small.png" />
+		</div>
+		<div class="price-table">
+			<table>
+				<tr class="names">
+					<td class="blank"></td>
+					<td class="title1 starter">
+						<h1>Starter</h1>
+						<h2>FREE</h2>
+						<h3>FOREVER</h3>
+						<a class="btn btn-success" href='signup.html'>Select This Plan</a>
+					</td>
+					<td class="title1 pro">
+						<h1>Professional</h1>
+						<h2>$49</h2>
+						<h3>MONTHLY</h3>
+						<a class="btn btn-info" href='signup.html'>Select This Plan</a>
+					</td>
+					<td class="title1 enterprise">
+						<h1>Enterprise</h1>
+						<h2>$99</h2>
+						<h3>MONTHLY</h3>
+						<a class="btn btn-warning" href='signup.html'>Select This Plan</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="category">Number of Contacts<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="The number of emails you can enter into our database"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element">Up to 250</td>
+					<td class="element best">Up to 2,500</td>
+					<td class="element">Up to 15,000</td>
+				</tr>
+				<tr class="odd">
+					<td class="category">E-mail Frequency<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="The number of emails you can send to each email address"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element">Once Per Month</td>
+					<td class="element best">Twice a Month</td>
+					<td class="element">Unlimited</td>
+				</tr>
+				<tr>
+					<td class="category">Customized E-mails<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="Each email is customized to your industry and clients"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+					<td class="element best"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+				</tr>
+				<tr class="odd">
+					<td class="category">Popular Questions<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="Our email content includes a Question and Answer section"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+					<td class="element best"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+				</tr>
+				<tr>
+					<td class="category">Product Matching<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="Popular and discounted products in your industry are offered exclusively to your clients through partnerships"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+					<td class="element best"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+				</tr>
+				<tr class="odd">
+					<td class="category">Custom Content<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="We give you the ability to add your own personal message to e-mails"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element"><img src="{{STATIC_URL}}img/x-mark.png"/></td>
+					<td class="element best"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+				</tr>
+				<tr>
+					<td class="category">Monthly Give-A-Ways<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="We offer popular product give-a-ways like gift baskets to users who engage with the email"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element"><img src="{{STATIC_URL}}img/x-mark.png"/></td>
+					<td class="element best"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+				</tr>
+				<tr class="odd">
+					<td class="category">Reports and Analytics<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="Gain insights on your email conversions and compare to other competitors in your industry"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element"><img src="{{STATIC_URL}}img/x-mark.png"/></td>
+					<td class="element best"><img src="{{STATIC_URL}}img/x-mark.png"/></td>
+					<td class="element"><img src="{{STATIC_URL}}img/check-mark.png"/></td>
+				</tr>
+				<tr>
+					<td class="category">Support<a class="tooltip1" data-placement="right" rel="tooltip"  data-original-title="We provide 24-7 support via phone and email"><img class="qmark" src="{{STATIC_URL}}img/qmark.png"/></a></td>
+					<td class="element borderbottom">Email</td>
+					<td class="element best borderbottom">Phone and Email</td>
+					<td class="element borderbottom">Dedicated Support Engineer</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		<div class="moreinfo">
+			<div class="question">
+				<h3> Want even more? Have special needs?</h3>
+				<p> If our plans don't match your needs, please contact us and we will be happy to work with your individual needs</p>
+			</div>
+			<div class="question">
+				<h3> How do I cancel or change my plan?</h3>
+				<p> Plans are billed monthly, and you can switch between plans at any time. We can help with any transitions you want to make</p>
+			</div>
+			<div class="question">
+				<h3> How do I pay?</h3>
+				<p> Once you sign up, you will have an account page where you can pay through Stripe. All 
+				major credit cards are accepted, and you can update your payment information at any time</p>
+			</div>
+			<div class="question">
+				<h3> Have more questions not answered here?</h3>
+				<p> Our team is ready to help you with anything. Please shoot us an email at questions@promail.com</p>
+			</div>
+		</div>
+		<div class="testimonials">
+			<div class="quote">
+				<h1>"As a doctor, you just don't have time to worry about things like newsletters. I love
+				how everything is automatic with ProMail."</h1>
+				<h2>Dr. Carged, DMV</h2>
+			</div>
+			<div class="quote">
+				<h1>"My patients absolutely love the emails they get."</h1>
+				<h2>Dr. Fredgret, DVM</h2>
+			</div>
+			<div class="quote">
+				<h1>"I am impressed by the quality of the emails ProMail sends. Every small business should take
+				advantage of this service."</h1>
+				<h2>Mr. Wesder, Small Business Owner</h2>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+{% endblock %}

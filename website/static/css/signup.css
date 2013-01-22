@@ -1,0 +1,22 @@
+.pros {
+	float: left;
+	max-height: 540px;
+	margin-left: 100px;
+}
+.form {
+	width: 400px;
+	float: left;
+	text-align: left;
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+.form input {
+	height: 30px;
+}
+.form label {
+	color: #777;
+	margin-top: 6px;
+}
+.form button {
+	margin-left: 180px;
+}

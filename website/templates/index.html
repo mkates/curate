@@ -1,18 +1,127 @@
-<html>
+{% extends 'base.html' %}
+{% block headercss %}
+	<link href="{{STATIC_URL}}css/index.css" rel="stylesheet" type="text/css" />
+{% endblock%}
 
+{% block headerjs %}
+<script>
+	
+	$(document).ready(function() {
+			fall();		
+	});
+	var fall = function fall() {
+		$('.fall-object').animate({
+			top: '+=20px'}, 100, function() {
+			topvalue = $(this).css('top').slice(0,-2);
+			if (topvalue > 150) {
+				$(this).css('top','-200px');
+			};
+			fall();
+		});
+	}
+	
+</script>
+{% endblock%}
+ 
 
-<head>
-	<link href="{{STATIC_URL}}css/base.css" rel="stylesheet" type="text/css" />
-<style>
-body {
-	border:10px solid red;
-}
-</style>
+{% block content %}
 
-</head>
-<body>
+<div class="intro-text">
+	<div class="intro">
+		<h1>ProMail creates <span>engaging newsletters</span> </h1>
+		<h1>so you can focus on what you do best</h1>
+	</div>
+</div>
 
-my first page
-</body>
-</html>
+<div class="subheader">
+	<div class="subheader_container">
+		<div class="object step1">
+			<img src="{{STATIC_URL}}img/pen_s.png"/>
+			<p> Enter your basic company information</p>
+		</div>
+		<div class="arrow">&rarr;</div>
+		<div class="object step2">
+			<img src="{{STATIC_URL}}img/clouds_s.png"/>
+			<p> Upload your contact list to our cloud server</p>
+		</div>
+		<div class="arrow">&rarr;</div>
+		<div class="object step3">
+			<img src="{{STATIC_URL}}img/envelope_s.png"/>
+			<p> We design & curate your newsletters</p>
+		</div>
+		<div class="arrow">&rarr;</div>
+		<div class="object step4">
+			<img src="{{STATIC_URL}}img/graph.png"/>
+			<p> We track and improve your client's loyalty</p>
+		</div>
+	</div>
+</div>
+<div class="falling_container">
+	<div class="falling">
+		<div class="fall-object off_set1"><img src="{{STATIC_URL}}img/blankbox.png"/></div>
+		<div class="fall-object off_set2"><img src="{{STATIC_URL}}img/fullblock_layout.png"/></div>
+		<div class="fall-object off_set3"><img src="{{STATIC_URL}}img/blankbox.png"/></div>
+		<div class="fall-object off_set4"><img src="{{STATIC_URL}}img/fullblock_cloud.png"/></div>
+		<div class="fall-object off_set5"><img src="{{STATIC_URL}}img/blankbox.png"/></div>
+		<div class="fall-object off_set6"><img src="{{STATIC_URL}}img/blankbox.png"/></div>
+		<div class="fall-object off_set7"><img src="{{STATIC_URL}}img/fullblock_tag.png"/></div>
+		<div class="fall-object off_set8"><img src="{{STATIC_URL}}img/blankbox.png"/></div>
+		<div class="fall-object off_set9"><img src="{{STATIC_URL}}img/fullblock_talk.png"/></div>
+		<div class="fall-object off_set10"><img src="{{STATIC_URL}}img/blankbox.png"/></div>
+		<div class="fall-object off_set11"><img src="{{STATIC_URL}}img/blankbox.png"/></div>
+		<div class="fall-object off_set12"><img src="{{STATIC_URL}}img/fullblock_swatch.png"/></div>
+		<div class="fall-object off_set13"><img src="{{STATIC_URL}}img/fullblock_talk.png"/></div>
+		<div class="fall-object off_set14"><img src="{{STATIC_URL}}img/blankbox.png"/></div>
+		<div class="fall-object off_set15"><img src="{{STATIC_URL}}img/fullblock_layout.png"/></div>
+	</div>
+</div>
 
+<div class="glow_container">
+	<div class="glow">
+		<img src="{{STATIC_URL}}img/newsletter.png"/>
+	</div>
+</div>
+
+<div class="features-container">
+	<div class="features">
+		<div class="featurebox feature1">
+			<img src="{{STATIC_URL}}img/feature1.png"/>
+			<div class="feature-text">
+				<h1>How ProMail Works</h1>
+				<h2>Once you sign up for a ProMail account, you can start automating scheduled newsletters to
+				your client's email list. Based on your industry, we curate the most relevant and engaging
+				content to populate your newsletter. Optionally, you can add custom content to your newsletters
+				before they go out, but otherwise, we take care of everything. </h2>
+			</div>
+		</div>
+		<div class="featurebox feature2">
+			<img src="{{STATIC_URL}}img/feature2.png"/>
+			<div class="feature-text">
+				<h1>No 'Management' Portals</h1>
+				<h2>When you are busy running a business, the last thing you want to do is learn how to 
+				use another piece of software. ProMail has worked tirelessly to design a system that provides
+				only optional tools so you can stay in contact with your clients effortlessly.</h2>
+			</div>
+		</div>
+		<div class="featurebox feature3">
+			<img src="{{STATIC_URL}}img/feature3.png"/>
+			<div class="feature-text">
+				<h1>Better Content</h1>
+				<h2>Our informative emails use machine learning technology to pick the most interesting content.
+				We scour the web for interesting tidbits, approved by professionals, when designing each email.
+				This helps us maximize the efficacy and engagement from your clients so you can increase loyalty while
+				helping your clients learn. </h2>
+			</div>
+		</div>
+		<div class="featurebox feature4">
+			<img src="{{STATIC_URL}}img/feature4.png"/>
+			<div class="feature-text">
+				<h1>Give-A-Ways, Discounts, and More</h1>
+				<h2> Our emails feature a host of awesome features that separate ourselves from your typical boring
+				newsletters. Monthly give-a-ways help users learn and feel rewarded, and discounts help clients
+				save on industry specific products. </h2>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
