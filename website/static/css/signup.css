@@ -17,6 +17,28 @@
 	color: #777;
 	margin-top: 6px;
 }
-.form button {
+.form .btn {
 	margin-left: 180px;
+}
+.form-success {
+	display: none;
+	text-align: center;
+	padding: 0 0 0 60px;
+}
+.form-success h1 {
+	font-size: 30px;
+	color: green;
+}
+.form-success h2 {
+	font-size: 16px;
+	font-weight: 300;
+	color: #999;
+	line-height: 24px;
+}
+.error-message {
+	color: red;
+	font-weight: 900;
+	font-size: 15px;
+	display: none;
+	padding-left: 180px;
 }

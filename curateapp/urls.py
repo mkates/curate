@@ -11,6 +11,11 @@ urlpatterns = patterns('website.views',
 	url(r'^sample','sample'),
 	url(r'^signup','signup'),
 	url(r'^about','about'),
+	
+	#Forms (Contact and Newsletter)
+	url(r'^contact','contact'),
+	url(r'^newslettersample','newslettersample'),
+	
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

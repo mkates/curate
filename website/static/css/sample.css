@@ -1,7 +1,11 @@
+.main-body {	
+	min-height: 270px;
+}
 .data {
 	width: 450px;
 	min-height: 200px;
 	float: left;
+	padding-top: 30px;
 }
 .data h1 {
 	font-size: 38px;
@@ -21,8 +25,12 @@
 .samplebox {
 	width: 500px;
 	height: 500px;
-	padding-top: 10px;
+	padding-top: 40px;
 	float: left;
+}
+.samplebox h2 {
+	color: #777;
+	line-height: 12px;
 }
 .sampleform {
 	width: 430px;
@@ -32,6 +40,8 @@
 .sampleform #profession {
 	float: left;
 	margin-right: 10px;
+	height: 40px;
+	padding: 10px 5px;
 }
 .sampleform #inputFirstName {
 	width: 100px;
@@ -50,6 +60,7 @@
 	clear: left;
 	float: left;
 	height: 40px;
+	padding: 10px 5px;
 }
 .sampleform #inputSuffix {
 	width: 85px;
@@ -71,8 +82,7 @@
 	width: 70px;
 	height: 40px;
 	margin-left: 5px;
-	padding-top: 8px;
-	padding-bottom: 5px;
+	padding: 10px 5px;
 }
 .sampleform #inputZipcode {
 	clear: none;
@@ -85,7 +95,7 @@
 	float: left;
 }
 .sampleform button {
-	margin: 10px 0;
+	margin: 10px 0 30px 0;
 }
 .sampleform p {
 	font-size: 12px;
@@ -208,4 +218,36 @@
 .resetcolors:hover {
 	text-decoration: underline;
 	cursor: pointer
+}
+.sent-message {
+	background: red;
+	width: 100%;
+	border-radius: 4px;
+	display: none;
+	background: white;
+	padding-top: 30px
+}
+.sent-message h1 {
+	color: #555;
+	font-size: 18px;
+	padding-top: 15px;
+	font-weight: 300;
+}
+.sent-message a {
+	margin: 20px 0 0px 0;
+	font-weight: 800;
+	font-size: 14px;
+}
+.messagewings {
+	width: 850px;
+	height: 50px;
+	margin: -30px auto 0 auto;
+}
+.messagewings .wings1 {
+	float: left;
+	width: 150px;
+}
+.messagewings .wings2 {
+	float: right;
+	width: 150px;
 }

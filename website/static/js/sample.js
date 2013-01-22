@@ -117,6 +117,42 @@ $(document).ready(function() {
 		news.updatevariables();
 		news.draw();
 	});
+	
+	$(".resetcolors").click(function() {
+		$(".sample-container").fadeOut('fast',function() {
+			$(".sent-message").fadeIn('600');
+		});
+	});
+	
+	//Submit Functionality
+	$("#contactform").submit(function() {
+		//email = emailgood($("#inputEmail").val());
+		if (true) {
+			$("#sendmessage").attr("disabled","disabled");
+			$("#sendmessage").val("Sending. . . ");
+			$.ajax({ // create an AJAX call...
+				type: 'POST',
+				data: $(this).serialize(), // get the form data
+				url: $(this).attr('action'), // the file to call
+				success: function(response) { // on success..
+					if (response === "failed") {
+						console.log("Submission failed");
+					} else if (response === "success" || response ==="testsuccess") {
+						console.log("success");
+						$(".sample-container").fadeOut('fast',function() {
+							$(".sent-message").fadeIn('600');
+						});
+					} 
+					$("#sendmessage").removeAttr("disabled");
+					$("#sendmessage").val("Join Beta List");
+				}
+			});
+			return false;
+		} else {
+			$(".error-message").fadeIn();
+			return false;
+		}
+	});
 });
 
 //Toggler for personal message

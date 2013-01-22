@@ -6,10 +6,17 @@ TEMPLATE_DEBUG = DEBUG
 import os
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 ADMINS = (
-    ('Mitchell Kates', 'mkates@mit.edu'),
+    ('Mitchell Kates', 'mhkates@gmail.com'),
 )
 
 MANAGERS = ADMINS
+
+#Email from contact form settings
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mhkates@gmail.com'
+EMAIL_HOST_PASSWORD = ''
 
 DATABASES = {
     'default': {
@@ -100,6 +107,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.core.mail.backends.smtp.EmailBackend'
 )
 
 ROOT_URLCONF = 'curateapp.urls'
