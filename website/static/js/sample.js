@@ -123,8 +123,8 @@ $(document).ready(function() {
 	//Submit Functionality
 	$(".sampleform").submit(function() {
 		console.log('here');
-		//email = emailgood($("#inputEmail").val());
-		if (true) {
+		email = emailgood($("#inputEmail").val());
+		if (email) {
 			$("#sendmessage").attr("disabled","disabled");
 			$("#sendmessage").html("Sending. . . ");
 			$.ajax({ // create an AJAX call...
@@ -183,3 +183,15 @@ var available = function available() {
 		});
 	};
 };
+
+//Email checker
+var emailgood = function checkemail(str){
+	var testresults;
+	var filter= /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+	if (filter.test(str)) {
+		testresults=true;
+	} else {
+		testresults=false;
+	}
+	return (testresults)
+}

@@ -84,11 +84,11 @@
 	display: inline;			
 }
 .falling_container {
-	height: 150px;
+	height: 100px;
 	background: #f5f5f5;
 }
 .falling {
-	height: 150px;
+	height: 100px;
 	width: 600px;
 	overflow: hidden;
 	margin: 0 auto;

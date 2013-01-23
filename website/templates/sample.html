@@ -27,13 +27,15 @@
 		</div>
 		<div class="sample-container">	
 			<div class="title">
-				<h1> Send Yourself A Sample </h1>
+				<h1> Send yourself a sample </h1>
 				<h2> Fill in the information below, and preview what your newsletter's could
 				look like. Sample newsletter will update automatically.</h2>
 				<img  class="shadow" src="{{STATIC_URL}}img/shadow-small.png" />
 			</div>	
 			<div class="data">
-
+				<div class="error-message">
+					<p> Please enter a valid e-mail address </p>
+				</div>
 				<form class="sampleform form-horizontal" method="POST" action="newslettersample">{% csrf_token %}
 					<select id="profession" name="inputIndustry">
 						<option class="selectoptions"> Profession. . . </option>

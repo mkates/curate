@@ -11,12 +11,21 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-#Email from contact form settings
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mhkates@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_SES_REGION_NAME = 'us-east-1'
+AWS_SES_REGION_ENDPOINT = 'email.us-east-1.amazonaws.com'
+#DO NOT SHARE THESE KEY COMBOS!!!
+AWS_SES_ACCESS_KEY_ID = 'AKIAIH3OOKLIOQQCEYOQ'
+AWS_SES_SECRET_ACCESS_KEY = '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'
+AWS_SES_AUTO_THROTTLE = 0.5
+
+# #Emails from forms 
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'curateioinfo@gmail.com'
+# EMAIL_HOST_PASSWORD = 'MitchellKates'
 
 DATABASES = {
     'default': {
@@ -130,9 +139,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django_ses',
+    'adminplus',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'website'
+    'website',
+    'south'
 )
 
 # A sample logging configuration. The only tangible logging

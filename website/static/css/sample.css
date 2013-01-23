@@ -114,6 +114,14 @@
 	width: 170px;
 	margin: 8px 0;
 }
+.error-message {
+	color: red;
+	font-weight: 900;
+	text-align: left;
+	padding-left: 20px;
+	display: none;
+}
+
 .sampleform select {
 	color: #888;
 }

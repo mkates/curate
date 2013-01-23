@@ -5,12 +5,13 @@ from django.http import HttpResponse
 from django.utils.html import escape
 from django.shortcuts import render
 from django.utils import simplejson
-from django.core.mail import send_mail
-
+from django.core.mail import EmailMessage, EmailMultiAlternatives
+from emailgenerator import *
 
 #############################################
 # Main Website Page Rendering ###############
 #############################################
+SENDER = 'curateioinfo@gmail.com'
 
 def index(request):
 	return render_to_response('index.html',context_instance=RequestContext(request))
@@ -43,9 +44,18 @@ def contact(request):
 		####CREATE NEW EMAIL ADDRESS AND PASSWORD TO ENABLE FUNCTIONALITY
 		try:
 			contents = name1 +"\n"+email1 +"\n"+phone1+"\n"+industry1
-			send_mail("Curate Inquiry", contents, email1,['mhkates@gmail.com'], fail_silently=False)
+			subject, from_email, to = 'hello', 'curateioinfo@gmail.com', 'curateioinfo@gmail.com'
+			text_content = 'This is an important message.'
+			html_content = '<p>This is an <strong>important</strong> message.</p>'
+			msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+			msg.attach_alternative(html_content, "text/html")
+			msg.send()
+			#message = EmailMessage("Curate Inquiry", contents, SENDER,['curateioinfo@gmail.com'])
+			#message.send()
+			print "Email Success"
 			return HttpResponse("success");
 		except:
+			print "Email Failed"
 			return HttpResponse("testsuccess");
 	else:
 		return HttpResponse("failed");
@@ -92,9 +102,12 @@ def newslettersample(request):
 			custom = 'Custom Message: '+custommessage
 			giveaway = "Monthly Giveaway: "+monthlygiveaway
 			combine = name+"\n"+address+"\n"+colors+"\n"+trending+"\n"+social+"\n"+product+"\n"+giveaway+"\n"+custom
-			send_mail("Newsletter Sample", combine, email,['mhkates@gmail.com'], fail_silently=False)
+			message = EmailMessage("Newsletter Sample", combine, SENDER,[SENDER])
+			message.send()
 			return HttpResponse("success");
 		except:
 			return HttpResponse("testsuccess");
 	else:
 		return HttpResponse("failed");
+
+
