@@ -25,37 +25,40 @@
 			</div>
 			<a class="btn btn-large btn-inverse" href="/pricing">Like it? Get started &rarr;</a>
 		</div>
-		<div class="sample-container">		
-			<div class="data">
+		<div class="sample-container">	
+			<div class="title">
 				<h1> Send Yourself A Sample </h1>
 				<h2> Fill in the information below, and preview what your newsletter's could
 				look like. Sample newsletter will update automatically.</h2>
+				<img  class="shadow" src="{{STATIC_URL}}img/shadow-small.png" />
+			</div>	
+			<div class="data">
+
 				<form class="sampleform form-horizontal" method="POST" action="newslettersample">{% csrf_token %}
-					<select id="profession">
+					<select id="profession" name="inputIndustry">
 						<option class="selectoptions"> Profession. . . </option>
 						<option id="dentistry"> Dentistry </option>
 						<option id="optometry"> Optometry </option>
 						<option id="general"> General Practitioner </option>
 						<option id="other"> Other </option>
 					</select>
-					<input type="text" id="inputOtherProfession" placeholder="Enter Your Industry. . .">
-					<select id="inputPrefix">
+					<input type="text" name="inputIndustryOther" id="inputOtherProfession" placeholder="Enter Your Industry. . .">
+					<select id="inputPrefix" name="inputPrefix">
 						<option>Dr.</option>
 						<option>Mr.</option>
 						<option>Mrs.</option>
 						<option>Ms.</option>
 						<option>Prof.</option>
 					</select>
-					<input type="text" id="inputFirstName" placeholder="First Name" >
-					<input type="text" id="inputLastName" placeholder="Last Name" >
-					<input type="text" id="inputSuffix" placeholder="Suffix" >
+					<input type="text" id="inputFirstName" name="inputFirstName" placeholder="First Name" >
+					<input type="text" id="inputLastName" name="inputLastName" placeholder="Last Name" >
+					<input type="text" id="inputSuffix" name="inputSuffix" placeholder="Suffix" >
 					<div class="clear"></div>
-					<input type="text" id="inputEmail" placeholder="Email">
-					<input type="text" id="inputAddress" placeholder="Street Address">
+					<input type="text" id="inputEmail" name="inputEmail" placeholder="Email">
+					<input type="text" id="inputAddress" name="inputAddress" placeholder="Street Address">
 					<div class="clear"></div>
-					<input type="text" id="inputCity" placeholder="City">
-					<select id="inputState" placeholder="State">
-						<option>State</option>
+					<input type="text" id="inputCity" name="inputCity" placeholder="City">
+					<select id="inputState" name="inputState" placeholder="State">
 						<option>AL</option>
 						<option>AK</option>
 						<option>AZ</option>
@@ -108,7 +111,7 @@
 						<option>WI</option>
 						<option>WY</option>
 					</select>
-					<input type="text" id="inputZipcode" maxlength="5" placeholder="Zip Code">
+					<input type="text" id="inputZipcode" name="inputZipcode" maxlength="5" placeholder="Zip Code">
 					<div class="clear"></div>	
 					<p> Select Colors: (<span class="resetcolors">reset colors</span>)</p>
 						<div class="input-append color" id="color1" data-color="rgb(35, 113, 146)" data-color-format="rgb">
@@ -129,35 +132,39 @@
 					<div class="clear"></div>
 					<div class="contentsbox">
 						<label class="checkbox">
-							<input type="checkbox" id="questionscheckbox" checked="yes">
+							<input type="checkbox" id="questionscheckbox" name="inputTrendingQuestions" checked="yes">
 							<p>Trending Questions</p>
 						</label>
 						<label class="checkbox">
-							<input type="checkbox" id="productcheckbox" checked="yes">
+							<input type="checkbox" id="productcheckbox" name="inputProducts" checked="yes">
 							<p>Popular Products</p>
 						</label>
 						<label class="checkbox">
-							<input type="checkbox" id="personalcheckbox"> 
+							<input type="checkbox" id="personalcheckbox" name="inputCustomMessage"> 
 							<p>Custom Message</p>
 						</label>
 					</div>
 					<div class="contentsbox">
 						<label class="checkbox">
-							<input type="checkbox" id="sociallinkscheckbox" checked="yes">
+							<input type="checkbox" id="sociallinkscheckbox" name="inputSocialLinks" checked="yes">
 							<p>Social Links</p>
 						</label>
 						<label class="checkbox">
-							<input type="checkbox" id="giveawaycheckbox" checked="yes">
+							<input type="checkbox" id="giveawaycheckbox" name="inputMonthlyGiveaway" checked="yes">
 							<p>Monthly Give-A-Way</p>
 						</label>
 					</div>
-					<textarea rows="3" id="personalmessage" placeholder="Enter your custom message here. . .">Here is your custom message</textarea>
+					<textarea rows="3" id="personalmessage" name="inputCustomMessage" placeholder="Enter your custom message here. . ."></textarea>
 					<div class="clear"></div>
+					<input type="hidden" name="inputColor1" id="inputcolor1" value="#ffffff">
+					<input type="hidden" name="inputColor2" id="inputcolor2" value="#ffffff">
+					<input type="hidden" name="inputColor3" id="inputcolor3" value="#ffffff">
+					<input type="hidden" name="inputColor4" id="inputcolor4" value="#ffffff">
 					<button id="sendmessage" class="submit btn btn-large btn-warning"> Send me this sample! </button>
 				</form>
 			</div>
 			<div class="samplebox">
-				<h2>Newsletter Preview:</h2>
+				<img class="sampleribbon" src="{{STATIC_URL}}img/sampleribbon.png"/>
 				<div class="preview_unavailable">
 					<h3> We're sorry, but we do not currently offer support to your industry</h3>
 					<h4> Fill out the form, view another profession's sample, and we will let you know when we launch to help you!</h4>

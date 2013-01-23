@@ -190,6 +190,6 @@ body {
     font-weight: 300;
 }
 
-.main-body .title img {
+.main-body .title .shadow {
 	opacity: .1;
 }

@@ -39,3 +39,8 @@
 .main-body .title .about-box-img {
 	opacity: .15;
 }
+.img-capture {
+	width: 840px;
+	opacity: 1;	
+	border-radius: 6px;
+}

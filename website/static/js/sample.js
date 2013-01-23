@@ -1,9 +1,9 @@
-
 //Main newsletter class
 var newsletter = function newsletter() {
 	this.prefix = "Dr."
 	this.firstname = "";
 	this.lastname = "";
+	this.suffix = "";
 	this.email = "";
 	this.address = "";
 	this.city = "";
@@ -32,6 +32,7 @@ var newsletter = function newsletter() {
 		this.prefix = $("#inputPrefix").val();
 		this.firstname = $('#inputFirstName').val();
 		this.lastname = $('#inputLastName').val();
+		this.suffix = $('#inputSuffix').val();
 		this.address = $('#inputAddress').val();
 		this.city = $('#inputCity').val();
 		this.state = $('#inputState').val();
@@ -50,7 +51,7 @@ var newsletter = function newsletter() {
 	this.draw = function draw() {
 		$(".preview_container").css("background",this.color2);
 		$(".preview_header").css("background",this.color1);
-		$(".preview_name").html(this.firstname+" "+this.lastname);
+		$(".preview_name").html(this.firstname+" "+this.lastname+" "+this.suffix);
 		$(".preview_address").html(this.address);
 		$(".preview_address2").html(this.city+" "+this.state+" "+this.zipcode);
 		$(".preview_personal").html(this.personalmessage);
@@ -97,6 +98,7 @@ $(document).ready(function() {
 	//Color changes
 	$('.color').colorpicker().on('changeColor', function(ev){
 		var handle = $(this).attr('id');
+		$("#input"+handle).val(ev.color.toHex());
 		news.setcolor(handle,ev.color.toHex());
 		news.draw();
 	});
@@ -117,26 +119,21 @@ $(document).ready(function() {
 		news.updatevariables();
 		news.draw();
 	});
-	
-	$(".resetcolors").click(function() {
-		$(".sample-container").fadeOut('fast',function() {
-			$(".sent-message").fadeIn('600');
-		});
-	});
-	
+
 	//Submit Functionality
-	$("#contactform").submit(function() {
+	$(".sampleform").submit(function() {
+		console.log('here');
 		//email = emailgood($("#inputEmail").val());
 		if (true) {
 			$("#sendmessage").attr("disabled","disabled");
-			$("#sendmessage").val("Sending. . . ");
+			$("#sendmessage").html("Sending. . . ");
 			$.ajax({ // create an AJAX call...
 				type: 'POST',
 				data: $(this).serialize(), // get the form data
 				url: $(this).attr('action'), // the file to call
 				success: function(response) { // on success..
 					if (response === "failed") {
-						console.log("Submission failed");
+						console.log("message failed");
 					} else if (response === "success" || response ==="testsuccess") {
 						console.log("success");
 						$(".sample-container").fadeOut('fast',function() {
@@ -144,7 +141,6 @@ $(document).ready(function() {
 						});
 					} 
 					$("#sendmessage").removeAttr("disabled");
-					$("#sendmessage").val("Join Beta List");
 				}
 			});
 			return false;

@@ -5,7 +5,7 @@
 	width: 450px;
 	min-height: 200px;
 	float: left;
-	padding-top: 30px;
+	padding-top: 25px;
 }
 .data h1 {
 	font-size: 38px;
@@ -21,16 +21,19 @@
     text-align: left;
     font-weight: 300;
     margin-left: 20px;
+    margin-bottom: 20px;
 }
 .samplebox {
 	width: 500px;
 	height: 500px;
-	padding-top: 40px;
+	padding-top: 20px;
 	float: left;
 }
-.samplebox h2 {
-	color: #777;
-	line-height: 12px;
+
+.sampleribbon {
+	float: left;
+	position: relative;
+	z-index: 999;
 }
 .sampleform {
 	width: 430px;
@@ -44,7 +47,7 @@
 	padding: 10px 5px;
 }
 .sampleform #inputFirstName {
-	width: 100px;
+	width: 90px;
 	margin-left: 5px;
 	float: left;
 	clear: none;
@@ -53,7 +56,7 @@
 	float: left;
 	clear: none;
 	margin-left: 5px;
-	width: 120px;
+	width: 100px;
 }
 .sampleform #inputPrefix {
 	width: 60px;
@@ -63,7 +66,7 @@
 	padding: 10px 5px;
 }
 .sampleform #inputSuffix {
-	width: 85px;
+	width: 70px;
 	margin-left: 5px;
 	clear: none;
 	float: left;
@@ -100,6 +103,7 @@
 .sampleform p {
 	font-size: 12px;
 	color: #aaa;
+	padding-bottom: 5px;
 }
 .sampleform textarea {
 	display: none;
@@ -107,7 +111,7 @@
 .sampleform input, .sampleform select {
 	clear: both;
 	height: 30px;
-	width: 190px;
+	width: 170px;
 	margin: 8px 0;
 }
 .sampleform select {
@@ -191,6 +195,9 @@
 	color: white;
 	line-height: 13px;
 	font-size: 11px;
+}
+#preview_custom {
+	display: none;
 }
 .preview_section {
 	background: white;

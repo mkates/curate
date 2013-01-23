@@ -53,19 +53,46 @@ def contact(request):
 #############################################
 # Newsletter Sample Form ####################
 #############################################
-def contact(request):
+def newslettersample(request):
 	if request.method == 'POST':
 		#Escape sanitizes the data
-		name1 = str(escape(request.POST['inputName']))
-		phone1 = str(escape(request.POST['inputPhone']))
-		email1 = str(escape(request.POST['inputEmail']))
-		industry1 = str(escape(request.POST['inputIndustry']))
-		cf = ContactForm(name=name1,email=email1,phone=phone1,industry=industry1)
-		cf.save()
-		####CREATE NEW EMAIL ADDRESS AND PASSWORD TO ENABLE FUNCTIONALITY
+		prefix = str(escape(request.POST['inputPrefix']))
+		firstname = str(escape(request.POST['inputFirstName']))
+		lastname = str(escape(request.POST['inputLastName']))
+		suffix = str(escape(request.POST['inputSuffix']))
+		email = str(escape(request.POST['inputEmail']))
+		streetaddress = str(escape(request.POST['inputAddress']))
+		city = str(escape(request.POST['inputCity']))
+		state = str(escape(request.POST['inputState']))
+		zipcode = str(escape(request.POST['inputZipcode']))
+		industry = str(escape(request.POST['inputIndustry']))
+		industryother = str(escape(request.POST['inputIndustryOther']))
+		trendingquestions = str(escape(request.POST['inputTrendingQuestions']))
+		sociallinks = str(escape(request.POST['inputSocialLinks']))
+		products = str(escape(request.POST['inputProducts']))
+		custommessage = str(escape(request.POST['inputCustomMessage']))
+		monthlygiveaway = str(escape(request.POST['inputMonthlyGiveaway']))
+		color1 = str(escape(request.POST['inputColor1']))
+		color2 = str(escape(request.POST['inputColor2']))
+		color3 = str(escape(request.POST['inputColor3']))
+		color4 = str(escape(request.POST['inputColor4']))
+		
+		#Save object to database
+		nsf= NewsletterSampleForm(prefix=prefix,firstname=firstname,lastname=lastname,suffix=suffix,email=email,streetaddress=streetaddress,
+		city=city,state=state,zipcode=zipcode,industry=industry,trendingquestions=trendingquestions,sociallinks=sociallinks,products=products,
+		monthlygiveaway = monthlygiveaway,color1=color1,color2=color2,color3=color3,color4=color4)
+		nsf.save()
 		try:
-			contents = name1 +"\n"+email1 +"\n"+phone1+"\n"+industry1
-			send_mail("Curate Inquiry", contents, email1,['mhkates@gmail.com'], fail_silently=False)
+			name = prefix+" "+firstname+" "+lastname+" "+suffix
+			address = streetaddress+" "+city+" "+state+" "+zipcode
+			colors = color1+" "+color2+" "+color3+" "+color4
+			trending = 'Trending Questions: '+trendingquestions
+			social = 'Social Links: '+sociallinks
+			product = 'Products: '+products
+			custom = 'Custom Message: '+custommessage
+			giveaway = "Monthly Giveaway: "+monthlygiveaway
+			combine = name+"\n"+address+"\n"+colors+"\n"+trending+"\n"+social+"\n"+product+"\n"+giveaway+"\n"+custom
+			send_mail("Newsletter Sample", combine, email,['mhkates@gmail.com'], fail_silently=False)
 			return HttpResponse("success");
 		except:
 			return HttpResponse("testsuccess");
