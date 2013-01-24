@@ -141,10 +141,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django_ses',
     'adminplus',
+    'south',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'website',
-    'south'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -175,5 +175,5 @@ LOGGING = {
         },
     }
 }
-#import dj_database_url
-#DATABASES['default'] =  dj_database_url.config()
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
