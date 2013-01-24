@@ -5,3 +5,4 @@ psycopg2==2.4.6
 wsgiref==0.1.2
 South==0.7.3
 -e git://github.com/jsocol/django-adminplus#egg=django-adminplus
+django-ses
