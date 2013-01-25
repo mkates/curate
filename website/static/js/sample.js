@@ -14,7 +14,7 @@ var newsletter = function newsletter() {
 	this.color3 = "#252525";
 	this.color4 = "#237192";
 	this.profession = "dentist";
-	this.messageCheckbox = 0;
+	this.messageCheckbox = 1;
 	this.questionsCheckbox = 1;
 	this.productsCheckbox = 1;
 	this.giveawayCheckbox = 1;
@@ -38,7 +38,6 @@ var newsletter = function newsletter() {
 		this.state = $('#inputState').val();
 		this.zipcode = $('#inputZipcode').val();
 		this.personalmessage = $("#personalmessage").val();
-		console.log($("#productcheckbox").is(":checked"));
 		if($("#personalcheckbox").is(":checked")) {this.messageCheckbox = 1} else {this.messageCheckbox = 0};
 		if($("#productcheckbox").is(":checked")) {this.productsCheckbox = 1} else {this.productsCheckbox = 0};
 		if($("#questionscheckbox").is(":checked")) {this.questionsCheckbox = 1} else {this.questionsCheckbox = 0};
@@ -49,14 +48,12 @@ var newsletter = function newsletter() {
 	
 	
 	this.draw = function draw() {
-		$(".preview_container").css("background",this.color2);
 		$(".preview_header").css("background",this.color1);
-		$(".preview_name").html(this.firstname+" "+this.lastname+" "+this.suffix);
+		$("#preview_name").html(this.prefix+" "+this.firstname+" "+this.lastname+", "+this.suffix);
 		$(".preview_address").html(this.address);
-		$(".preview_address2").html(this.city+" "+this.state+" "+this.zipcode);
+		$(".preview_address2").html(this.city+", "+this.state+" "+this.zipcode);
 		$(".preview_personal").html(this.personalmessage);
-		$(".preview_profession").html(this.profession);
-		if(this.messageCheckbox == 1) { $("#preview_custom").fadeIn()} else {$("#preview_custom").fadeOut()};	
+// 		if(this.messageCheckbox == 1) { $("#preview_custom").fadeIn()} else {$("#preview_custom").fadeOut()};	
 		if(this.productsCheckbox == 1) { $("#preview_products").fadeIn()} else {$("#preview_products").fadeOut()};	
 		if(this.questionsCheckbox == 1) { $("#preview_questions").fadeIn()} else {$("#preview_questions").fadeOut()};	
 		if(this.giveawayCheckbox == 1) { $("#preview_giveaway").fadeIn()} else {$("#preview_giveaway").fadeOut()};	
@@ -174,12 +171,14 @@ var toggleother = function toggleother() {
 var available = function available() {
 	console.log("here");
 	if ($("#profession :selected").attr('id') === 'other') {
-		$(".preview_container").fadeOut('fast',function() {
+		$(".sampleribbon").css("display","none");
+		$(".preview_container_box").fadeOut('fast',function() {
 			$(".preview_unavailable").fadeIn();
 		});
 	} else {
 		$(".preview_unavailable").fadeOut('fast',function() {
-			$(".preview_container").fadeIn();
+			$(".preview_container_box").fadeIn();
+			$(".sampleribbon").css("display","block");
 		});
 	};
 };

@@ -9,6 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$','website.views.index'),
+    url(r'^test','website.views.test'),
 	url(r'^pricing','website.views.pricing'),
 	url(r'^sample','website.views.sample'),
 	url(r'^signup','website.views.signup'),

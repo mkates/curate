@@ -16,7 +16,7 @@
 	
 	<div class="main-body">	
 		<div class="sent-message">
-			<h1> Your sample has been received, and we are putting our best engineers on the task</h1>
+			<h1>Your sample has been received, and we are putting our best engineers on the task</h1>
 			<h1>Check your inbox momentarily for an email from Curate.io</h1>
 			<div class="messagewings">
 				<img class="wings1" src="{{STATIC_URL}}img/mailwings2.png" />
@@ -40,8 +40,6 @@
 					<select id="profession" name="inputIndustry">
 						<option class="selectoptions"> Profession. . . </option>
 						<option id="dentistry"> Dentistry </option>
-						<option id="optometry"> Optometry </option>
-						<option id="general"> General Practitioner </option>
 						<option id="other"> Other </option>
 					</select>
 					<input type="text" name="inputIndustryOther" id="inputOtherProfession" placeholder="Enter Your Industry. . .">
@@ -115,7 +113,8 @@
 					</select>
 					<input type="text" id="inputZipcode" name="inputZipcode" maxlength="5" placeholder="Zip Code">
 					<div class="clear"></div>	
-					<p> Select Colors: (<span class="resetcolors">reset colors</span>)</p>
+					<!-- 
+<p> Select Colors: (<span class="resetcolors">reset colors</span>)</p>
 						<div class="input-append color" id="color1" data-color="rgb(35, 113, 146)" data-color-format="rgb">
 							<span class="add-on"><i style="background-color: rgb(35, 113, 146)"></i></span>
 						</div>
@@ -132,6 +131,7 @@
 							<span class="add-on"><i style="background-color: rgb(50, 122, 153)"></i></span>
 						</div>
 					<div class="clear"></div>
+ -->
 					<div class="contentsbox">
 						<label class="checkbox">
 							<input type="checkbox" id="questionscheckbox" name="inputTrendingQuestions" checked="yes">
@@ -156,12 +156,14 @@
 							<p>Monthly Give-A-Way</p>
 						</label>
 					</div>
-					<textarea rows="3" id="personalmessage" name="inputCustomMessage" placeholder="Enter your custom message here. . ."></textarea>
+					<textarea rows="3" id="personalmessage" name="inputCustomMessage" placeholder="Enter your custom message here. . .">If you haven’t already given our office a call to schedule your oral checkup this season, don’t hesistate to do so. We’d love to see you! Also, if you or anyone in your family may suffer from sleep apnea, be sure to let us know. We’ve developed an incredible new, nighttime dental device that’s helps relieve symptoms and suffering for those affected by this ailment. </textarea>
 					<div class="clear"></div>
-					<input type="hidden" name="inputColor1" id="inputcolor1" value="#ffffff">
+					<!-- 
+<input type="hidden" name="inputColor1" id="inputcolor1" value="#ffffff">
 					<input type="hidden" name="inputColor2" id="inputcolor2" value="#ffffff">
 					<input type="hidden" name="inputColor3" id="inputcolor3" value="#ffffff">
 					<input type="hidden" name="inputColor4" id="inputcolor4" value="#ffffff">
+ -->
 					<button id="sendmessage" class="submit btn btn-large btn-warning"> Send me this sample! </button>
 				</form>
 			</div>
@@ -169,31 +171,115 @@
 				<img class="sampleribbon" src="{{STATIC_URL}}img/sampleribbon.png"/>
 				<div class="preview_unavailable">
 					<h3> We're sorry, but we do not currently offer support to your industry</h3>
-					<h4> Fill out the form, view another profession's sample, and we will let you know when we launch to help you!</h4>
+					<h4> Fill out the form, and we will let you know when we launch with your profession!</h4>
 				</div>
-				<div class="preview_container">
-					<div class="preview_header">
+				<div class="preview_container_box">
+					<div class="preview_header_box">
+						<div class="preview_logo">
+							<img src="https://s3.amazonaws.com/CurateBucket/dentistlogo.png" alt="Dentist Digest" />
+						</div>
 						<p class="preview_profession"></p>
 						<div class="preview_info">
-							<p class="preview_name"></p>
-							<p class="preview_address"></p>
-							<p class="preview_address2"></p>
+							<ul>
+								<li>Refer A Friend</li>
+								<li>Contact Our Office</li>							
+							</ul>
 						</div>
 					</div>
 					<div class="preview_section" id="preview_custom">
-						<p class="preview_personal"></p>
+						<div class="preview_section_inner">
+							<div class="preview_left">
+								<img src="{{STATIC_URL}}img/doctorportrait.png"/>
+								<div class="preview_left_bottom">
+									<h3 id="preview_name">Dr. David Stern, DMD</h3>
+									<p class="preview_address">34 Pavers Way</p>
+									<p class="preview_address2">Bridgetown, RI 02392</p>
+								</div>
+							</div>
+							<div class="preview_right">
+								<h1>Be sure to book your spring <span class="colored">oral care</span> checkup</h1>
+								<h2 class="preview_personal">If you haven’t already given our office a call to schedule your oral checkup this season, don’t hesistate to do so. We’d love to see you! Also, if you or anyone in your family may suffer from sleep apnea, be sure to let us know. We’ve developed an incredible new, nighttime dental device that’s helps relieve symptoms and suffering for those affected by this ailment. </h2>
+								<button class="btn btn-mini btn-info">Contact Us</button>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<img class="boxshadow" src="https://s3.amazonaws.com/CurateBucket/boxshadow.png"/>
 					</div>
 					<div class="preview_section" id="preview_questions">
-						questions
+						<div class="preview_section_inner">
+							<div class="preview_left">
+								<img src="{{STATIC_URL}}img/productimage1.png"/>
+							</div>
+							<div class="preview_right">
+								<h1>Are you using the <span class="colored">right toothpaste</span>?</h1>
+								<h2>Everyone has their favorite toothpaste, whether you like the way it tastes, or appreciate the minty-clean feeling it leaves behind. But is one better suited to your mouth?</h2>
+								<button class="btn btn-mini">Read More</button>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<img class="boxshadow" src="https://s3.amazonaws.com/CurateBucket/boxshadow.png"/>
 					</div>
+				<!-- 
+	<div class="preview_section" id="preview_questions">
+						<div class="preview_section_inner">
+							<div class="preview_left">
+								<img src="{{STATIC_URL}}img/productimage2.png"/>
+							</div>
+							<div class="preview_right">
+								<h1>The latest dental trends to fight <span>caries disease</span></h1>
+								<h2>Dental caries, also known as tooth decay or cavities, results from the demineralization of hard titues like tooth enamel. Explore the latest trends in caries prevention. </h2>
+								<button class="btn btn-mini">Read More</button>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<img class="boxshadow" src="https://s3.amazonaws.com/CurateBucket/boxshadow.png"/>
+					</div>
+					
+ -->
+					
 					<div class="preview_section" id="preview_products">
-						products
+						<div class="preview_section_inner">
+							<h2>Dentist exclusive <span class="colored"> discounts</span> on top products</h2>
+							<div class="preview_item">
+								<img src="https://s3.amazonaws.com/CurateBucket/productlisterine.jpg"/>
+								<h2>on Listerine 24oz mint mouthwash</h2>
+								<h3>at Listerine.com</h3>
+							</div>
+							<div class="preview_item">
+								<img src="https://s3.amazonaws.com/CurateBucket/productsonicare.png"/>
+								<h2>all Sonicare e-Series toothbrushes</h2>
+								<h3>at Sonicare.com</h3>
+							</div>
+							<div class="preview_item">
+								<img src="https://s3.amazonaws.com/CurateBucket/productsleepright.jpg"/>
+								<h2>on Sleep Right dental guard</h2>
+								<h3>at Walgreens</h3>
+							</div>
+							<div class="preview_item">
+								<img src="https://s3.amazonaws.com/CurateBucket/productoralb.jpg"/>
+								<h2>on Oral B Glide dental floss products</h2>
+								<h3>at Target</h3>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<img class="boxshadow" src="https://s3.amazonaws.com/CurateBucket/boxshadow.png"/>
 					</div>
 					<div class="preview_section" id="preview_giveaway">
-						give-a-way
+						<div class="preview_section_inner">
+							<div class="preview_right">
+								<h1>Take our two minute oral hygiene survey for a chance to win a new <span class="colored">iPad with Retina Display</span></h1>
+								<button class="btn btn-info btn-mini">Take the Survey</button>
+							</div>
+							<div class="preview_left">
+								<img src="https://s3.amazonaws.com/CurateBucket/ipadretina.png"/>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<img class="boxshadow" src="https://s3.amazonaws.com/CurateBucket/boxshadow.png"/>
 					</div>
 					<div class="preview_section" id="preview_sociallinks">
-						sociallinks
+						 <button class="btn btn-mini btn-inverse">Manage Subscription</button>
+						 <img src="{{STATIC_URL}}img/socialicons.png"/>
 					</div>
 				</div>
 			</div>

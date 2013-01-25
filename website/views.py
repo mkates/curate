@@ -1,17 +1,19 @@
 from django.shortcuts import render_to_response
 from website.models import *
-from django.template import RequestContext
+from django.template import RequestContext, Context, loader
 from django.http import HttpResponse
 from django.utils.html import escape
 from django.shortcuts import render
 from django.utils import simplejson
 from django.core.mail import EmailMessage, EmailMultiAlternatives
-from emailgenerator import *
+
+
+#Universal variables
+SENDER = 'curateioinfo@gmail.com'
 
 #############################################
 # Main Website Page Rendering ###############
 #############################################
-SENDER = 'curateioinfo@gmail.com'
 
 def index(request):
 	return render_to_response('index.html',context_instance=RequestContext(request))
@@ -28,7 +30,6 @@ def signup(request):
 def about(request):
 	return render_to_response('about.html',context_instance=RequestContext(request))
 
-
 #############################################
 # Sign up Contact Form ######################
 #############################################
@@ -44,12 +45,6 @@ def contact(request):
 		####CREATE NEW EMAIL ADDRESS AND PASSWORD TO ENABLE FUNCTIONALITY
 		try:
 			contents = name1 +"\n"+email1 +"\n"+phone1+"\n"+industry1
-			subject, from_email, to = 'hello', 'curateioinfo@gmail.com', 'curateioinfo@gmail.com'
-			text_content = 'This is an important message.'
-			html_content = '<p>This is an <strong>important</strong> message.</p>'
-			msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-			msg.attach_alternative(html_content, "text/html")
-			msg.send()
 			#message = EmailMessage("Curate Inquiry", contents, SENDER,['curateioinfo@gmail.com'])
 			#message.send()
 			print "Email Success"
@@ -102,12 +97,39 @@ def newslettersample(request):
 			custom = 'Custom Message: '+custommessage
 			giveaway = "Monthly Giveaway: "+monthlygiveaway
 			combine = name+"\n"+address+"\n"+colors+"\n"+trending+"\n"+social+"\n"+product+"\n"+giveaway+"\n"+custom
-			message = EmailMessage("Newsletter Sample", combine, SENDER,[SENDER])
-			message.send()
-			return HttpResponse("success");
+			sendtestemail(name,address,colors,trending,social,product,custom,giveaway)
+			return HttpResponse("Object Saved and Email Sent");
 		except:
-			return HttpResponse("testsuccess");
+			return HttpResponse("Message Saved. Email NOT sent due to ERROR");
 	else:
-		return HttpResponse("failed");
+		return HttpResponse("Email Failed");
 
-
+#############################################
+# Sends a sample email ######################
+# Called from newsletter form submit#########
+#############################################
+def sendtestemail(name,address,colors,trending,social,product,custom,giveaway):
+	from emailgenerator import *
+	htmlemail = htmlemail('name','address','colors','trending','social','product','custom','giveaway')
+	#Sends the emails
+	subject, from_email, to = 'hello', SENDER, SENDER
+	text_content = 'This is the default text fallback'
+	msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+	msg.attach_alternative(htmlemail, "text/html")
+	msg.send()
+	
+	
+	
+def test(request):
+	from emailgenerator import *
+	htmlemail = htmlemail('name','address','colors','trending','social','product','custom','giveaway')
+	return HttpResponse(htmlemail)
+	
+	
+	
+	
+	
+	
+	
+	
+	
