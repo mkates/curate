@@ -125,7 +125,7 @@ def sendtestemail(RECEIVER,name,address,address2,trending,social,product,custom,
 	#Sends the emails
 	try:
 		subject, from_email, to = 'hello', SENDER, RECEIVER 
-		text_content = 'This is the default text fallback'
+		text_content = html_email = plainemail(RECEIVER,name,address,address2,trending,social,product,custom,giveaway,personal)
 		msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
 		msg.attach_alternative(html_email, "text/html")
 		msg.send()

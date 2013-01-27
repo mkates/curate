@@ -23,3 +23,18 @@ def parse(booleanvalue):
 		return 'True'
 	else:
 		return ''
+		
+def plainemail(RECEIVER,name,address,address2,trending,social,product,custom,giveaway,personal):
+	template = loader.get_template('dentisttemplateplain.txt')
+	c = Context({"name": name,
+		 "address": address,
+		 "address2": address2,
+		 "trending": parse(trending),
+		 "social": parse(social),
+		 "product":parse(product),
+		 "custom": parse(custom),
+		 "giveaway":parse(giveaway),
+		 "personal":personal,
+		})
+	final_content_plain = template.render(c)
+	return final_content_plain

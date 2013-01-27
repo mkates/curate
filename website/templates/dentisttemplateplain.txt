@@ -1,0 +1,37 @@
+============================================================
+Your Dentist Digest
+============================================================
+
+{{personal}}
+
+------------------------------------
+
+
+** Are you using the right toothpaste for your mouth?
+
+Everyone has their favorite toothpaste, whether you like the way it tastes, or appreciate the minty-clean feeling it leaves behind. But is one better suited to your unique mouth chemistry than another? 
+
+** The latest dental tech trends that fight caries disease
+
+Dental caries, also known as tooth decay or cavities, results from the demineralization of hard titues like tooth enamel. We explore the latest trends in caries prevention and explore their efficacy. 
+
+** Should adults skip the fluoride as part of oral hygiene?
+
+There has been a recent trend toward all-natural toothpaste and mouthwash products, and flouride in particular has come under great scrutiny. Should you continue use it beyond childhood?
+
+To visit our website, visit this URL in your browser:
+http://www.curateio.com
+
+
+Regards,
+
+Curate.io
+
+
+============================================================
+============================================================
+
+Mailing Address:
+{{ address }}
+{{ address2 }}
+
