@@ -3,16 +3,23 @@ from django.http import HttpResponse
 #For context, a blank field will not render where as 
 #any string will register as true
 
-def htmlemail(name,address,colors,trending,social,product,custom,giveaway):
+def htmlemail(RECEIVER,name,address,address2,trending,social,product,custom,giveaway,personal):
 	template = loader.get_template('dentisttemplate.html')
-	c = Context({"name": 'Dr. Alan Stern, DMD',
-		 "address": '34 Pavers Way',
-		 "address2": 'Waltham, NJ 07723',
-		 "trending":trending,
-		 "social":social,
-		 "product":product,
-		 "custom":custom,
-		 "giveaway":giveaway,
+	c = Context({"name": name,
+		 "address": address,
+		 "address2": address2,
+		 "trending": parse(trending),
+		 "social": parse(social),
+		 "product":parse(product),
+		 "custom": parse(custom),
+		 "giveaway":parse(giveaway),
+		 "personal":personal,
 		})
 	final_content_html = template.render(c)
 	return final_content_html
+
+def parse(booleanvalue):
+	if booleanvalue == 'True':
+		return 'True'
+	else:
+		return ''

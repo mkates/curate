@@ -30,8 +30,6 @@ class NewsletterSampleForm(models.Model):
 	products = models.BooleanField()
 	custommessage = models.BooleanField()
 	monthlygiveaway = models.BooleanField()
-	color1 = models.CharField(max_length=7)
-	color2 = models.CharField(max_length=7)
-	color3 = models.CharField(max_length=7)
-	color4 = models.CharField(max_length=7)
+	personalmessage = models.CharField(max_length=1000)
+
 

@@ -1,0 +1,24 @@
+.legal_container {
+	padding: 0px 130px 50px 130px;
+	text-align: left;
+}
+.legal_container h1 {
+	font-size: 20px;
+	font-weight: 300;
+	color: #444;
+	margin-top: 30px;
+}
+.legal_container p {
+	font-size: 13px;
+	font-weight: 300;
+	color: #444;
+}
+.legal_container ul {
+	padding: 20px 0px 20px 40px;
+	list-style-type: circle;
+}
+.legal_container ul li {
+	font-size: 13px;
+	font-weight: 300;
+	color: #444;
+}

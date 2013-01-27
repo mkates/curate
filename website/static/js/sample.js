@@ -63,8 +63,8 @@ var newsletter = function newsletter() {
 
 //Ready Function and all click function calls
 $(document).ready(function() {
-	//Initialize the colorpickers
-	$('.color').colorpicker();
+	//Initialize button 
+	$("#sendmessage").removeAttr("disabled");
 	var news = new newsletter();
 	news.updatevariables();
 	news.draw();
@@ -122,6 +122,7 @@ $(document).ready(function() {
 		console.log('here');
 		email = emailgood($("#inputEmail").val());
 		if (email) {
+			$(".error-message").fadeOut();
 			$("#sendmessage").attr("disabled","disabled");
 			$("#sendmessage").html("Sending. . . ");
 			$.ajax({ // create an AJAX call...
@@ -131,7 +132,9 @@ $(document).ready(function() {
 				success: function(response) { // on success..
 					if (response === "failed") {
 						console.log("message failed");
-					} else if (response === "success" || response ==="testsuccess") {
+						$(".error-message2").fadeIn();
+						$("#sendmessage").html("Send me this sample!");
+					} else {
 						console.log("success");
 						$(".sample-container").fadeOut('fast',function() {
 							$(".sent-message").fadeIn('600');

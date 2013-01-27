@@ -14,6 +14,8 @@ urlpatterns = patterns('',
 	url(r'^sample','website.views.sample'),
 	url(r'^signup','website.views.signup'),
 	url(r'^about','website.views.about'),
+	url(r'^privacy','website.views.privacy'),
+	url(r'^terms','website.views.terms'),
 	
 	#Forms (Contact and Newsletter)
 	url(r'^contact','website.views.contact'),
