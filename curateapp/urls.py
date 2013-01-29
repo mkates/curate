@@ -5,7 +5,6 @@ from django.contrib import admin
 from adminplus import AdminSitePlus
 admin.site = AdminSitePlus()
 admin.autodiscover()
-
 urlpatterns = patterns('',
     # Examples:
     url(r'^$','website.views.index'),
@@ -16,7 +15,7 @@ urlpatterns = patterns('',
 	url(r'^about','website.views.about'),
 	url(r'^privacy','website.views.privacy'),
 	url(r'^terms','website.views.terms'),
-	
+	url(r'^continue/(?P<clientid>\d{7})/(?P<month>\w{3})/(?P<year>\d{4})/(?P<section>\w+)/$', 'website.views.continued'),
 	#Forms (Contact and Newsletter)
 	url(r'^contact','website.views.contact'),
 	url(r'^newslettersample','website.views.newslettersample'),

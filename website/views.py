@@ -37,6 +37,13 @@ def privacy(request):
 def terms(request):
 	return render_to_response('terms.html',context_instance=RequestContext(request))
 
+#Note that clientid is a seven digit number, and section is a string which can hold the values
+#[overview,article1,article2,article3,products,survey]
+def continued(request,clientid,section,month,year):
+	tags = {}
+	tags[section] = True
+	return render_to_response('continue.html',tags,context_instance=RequestContext(request))
+
 #############################################
 # Sign up Contact Form ######################
 #############################################
@@ -124,10 +131,12 @@ def sendtestemail(RECEIVER,name,address,address2,trending,social,product,custom,
 	html_email = htmlemail(RECEIVER,name,address,address2,trending,social,product,custom,giveaway,personal)
 	#Sends the emails
 	try:
-		subject, from_email, to = 'hello', SENDER, RECEIVER 
+		subject, from_email, to = '[Sample] Your Dentist Digest', SENDER, RECEIVER 
 		text_content = str(plainemail(RECEIVER,name,address,address2,trending,social,product,custom,giveaway,personal))
-		msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+		#headers = {'Reply-To': 'curateio@gmail.com'}
+		msg = EmailMultiAlternatives(subject, text_content, from_email, [to], headers=headers)
 		msg.attach_alternative(html_email, "text/html")
+		
 		msg.send()
 		return "Success"
 	except:
